@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.zhixing.app">
+
+    <application
+        android:name="com.tencent.qcloud.tim.com.zhixing.app.DemoApplication"
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.tencent.qcloud.tim.com.zhixing.app.SplashActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.tencent.qcloud.tim.com.zhixing.app.login.LoginForDevActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tencent.qcloud.tim.com.zhixing.app.main.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+
+            <!-- 离线推送打开应用内页面 -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="com.tencent.qcloud"
+                    android:path="/detail"
+                    android:scheme="pushscheme" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name="com.tencent.qcloud.tim.com.zhixing.app.LanguageReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.LOCALE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.tencent.qcloud.tim.com.zhixing.app.profile.SelfDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.tencent.qcloud.tim.com.zhixing.app.profile.AboutIMActivity"
+            android:screenOrientation="portrait" />
+
+
+        <activity android:name="com.tencent.qcloud.tim.com.zhixing.app.login.ThemeSelectActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.tencent.qcloud.tim.com.zhixing.app.login.LanguageSelectActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.tencent.qcloud.tim.com.zhixing.app.login.StyleSelectActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.tencent.qcloud.tim.com.zhixing.app.main.MainMinimalistActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+
+            <!-- 离线推送打开应用内页面 -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="com.tencent.qcloud"
+                    android:path="/detail"
+                    android:scheme="pushscheme" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.qcloud.tim.com.zhixing.app.profile.SelfDetailMinamalistActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.tencent.qcloud.tim.com.zhixing.app.profile.AboutIMMinimalistActivity"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>
