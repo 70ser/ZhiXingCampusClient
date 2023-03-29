@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -14,7 +14,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.zhix.app"
+        applicationId "com.zhixing.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode rootProject.ext.versionCode
@@ -32,6 +32,11 @@ android {
          *  "VIVO_APPKEY" : 厂商推送平台注册应用的 AppKey
          *  "VIVO_APPID" : 厂商推送平台注册应用的 AppID
          */
+        manifestPlaceholders = [
+                "VIVO_APPKEY" : " ",
+                "VIVO_APPID" : " ",
+                "HONOR_APPID" : " "
+        ]
     }
 
     buildTypes {

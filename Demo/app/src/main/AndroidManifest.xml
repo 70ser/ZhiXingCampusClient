@@ -4,14 +4,14 @@
     package="com.zhixing.app">
 
     <application
-        android:name="com.tencent.qcloud.tim.com.zhixing.app.DemoApplication"
+        android:name=".DemoApplication"
         android:allowBackup="false"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.tencent.qcloud.tim.com.zhixing.app.SplashActivity"
+            android:name=".SplashActivity"
             android:screenOrientation="portrait"
             android:exported="true"
             android:theme="@style/SplashTheme">
@@ -24,12 +24,12 @@
         </activity>
 
         <activity
-            android:name="com.tencent.qcloud.tim.com.zhixing.app.login.LoginForDevActivity"
+            android:name=".login.LoginForDevActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.tencent.qcloud.tim.com.zhixing.app.main.MainActivity"
+            android:name=".main.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:exported="true"
@@ -48,7 +48,7 @@
         </activity>
 
         <receiver
-            android:name="com.tencent.qcloud.tim.com.zhixing.app.LanguageReceiver"
+            android:name=".LanguageReceiver"
             android:enabled="true"
             android:exported="false">
             <intent-filter android:priority="1000">
@@ -57,21 +57,21 @@
         </receiver>
 
         <activity
-            android:name="com.tencent.qcloud.tim.com.zhixing.app.profile.SelfDetailActivity"
+            android:name=".profile.SelfDetailActivity"
             android:screenOrientation="portrait" />
-        <activity android:name="com.tencent.qcloud.tim.com.zhixing.app.profile.AboutIMActivity"
+        <activity android:name=".profile.AboutIMActivity"
             android:screenOrientation="portrait" />
 
 
-        <activity android:name="com.tencent.qcloud.tim.com.zhixing.app.login.ThemeSelectActivity"
+        <activity android:name=".login.ThemeSelectActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.tencent.qcloud.tim.com.zhixing.app.login.LanguageSelectActivity"
+        <activity android:name=".login.LanguageSelectActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.tencent.qcloud.tim.com.zhixing.app.login.StyleSelectActivity"
+        <activity android:name=".login.StyleSelectActivity"
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name="com.tencent.qcloud.tim.com.zhixing.app.main.MainMinimalistActivity"
+            android:name=".main.MainMinimalistActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:exported="true"
@@ -89,9 +89,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.tencent.qcloud.tim.com.zhixing.app.profile.SelfDetailMinamalistActivity"
+            android:name=".profile.SelfDetailMinamalistActivity"
             android:screenOrientation="portrait" />
-        <activity android:name="com.tencent.qcloud.tim.com.zhixing.app.profile.AboutIMMinimalistActivity"
+        <activity android:name=".profile.AboutIMMinimalistActivity"
             android:screenOrientation="portrait" />
 
     </application>
