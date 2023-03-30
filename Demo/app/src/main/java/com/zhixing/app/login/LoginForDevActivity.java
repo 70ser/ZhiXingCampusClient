@@ -20,6 +20,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import com.tencent.qcloud.tuicore.util.TUIBuild;
 import com.zhixing.app.DemoApplication;
 import com.zhixing.app.R;
 import com.zhixing.app.bean.UserInfo;
@@ -33,6 +34,8 @@ import com.tencent.qcloud.tuicore.TUIThemeManager;
 import com.tencent.qcloud.tuicore.component.activities.BaseLightActivity;
 import com.tencent.qcloud.tuicore.interfaces.TUICallback;
 import com.tencent.qcloud.tuicore.util.ToastUtil;
+
+import java.util.Locale;
 
 /**
  * Demo的登录Activity
@@ -74,13 +77,20 @@ public class LoginForDevActivity extends BaseLightActivity {
                 setCurrentTheme();
             }
         };
+        String currentLanguage = TUIThemeManager.getInstance().getCurrentLanguage();
+        if (TextUtils.isEmpty(currentLanguage)) {
+            Locale locale;
+            if (TUIBuild.getVersionInt() < Build.VERSION_CODES.N) {
+                locale = getResources().getConfiguration().locale;
+            } else {
+                locale = getResources().getConfiguration().getLocales().get(0);
+            }
+            currentLanguage = locale.getLanguage();
+        }
+        currentLanguage="zh";
+        TUIThemeManager.getInstance().changeLanguage(LoginForDevActivity.this, currentLanguage);
 
-        IntentFilter languageFilter = new IntentFilter();
         IntentFilter themeFilter = new IntentFilter();
-        languageFilter.addAction(LanguageSelectActivity.DEMO_LANGUAGE_CHANGED_ACTION);
-        themeFilter.addAction(ThemeSelectActivity.DEMO_THEME_CHANGED_ACTION);
-        LocalBroadcastManager.getInstance(this).registerReceiver(languageChangedReceiver, languageFilter);
-        LocalBroadcastManager.getInstance(this).registerReceiver(themeChangedReceiver, themeFilter);
 
         initActivity();
     }
@@ -169,12 +179,6 @@ public class LoginForDevActivity extends BaseLightActivity {
         });
         mUserAccount.setText(UserInfo.getInstance().getUserId());
 
-        languageArea.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                LanguageSelectActivity.startSelectLanguage(LoginForDevActivity.this);
-            }
-        });
 
         styleArea.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -183,12 +187,6 @@ public class LoginForDevActivity extends BaseLightActivity {
             }
         });
 
-        modifyTheme.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ThemeSelectActivity.startSelectTheme(LoginForDevActivity.this);
-            }
-        });
     }
 
     @Override
@@ -205,16 +203,8 @@ public class LoginForDevActivity extends BaseLightActivity {
 
     private void setCurrentTheme() {
         int currentTheme = TUIThemeManager.getInstance().getCurrentTheme();
-        if (currentTheme == TUIThemeManager.THEME_LIGHT) {
             logo.setBackgroundResource(R.drawable.demo_ic_logo_light);
             mLoginView.setBackgroundResource(R.drawable.button_border_light);
-        } else if (currentTheme == TUIThemeManager.THEME_LIVELY) {
-            logo.setBackgroundResource(R.drawable.demo_ic_logo_lively);
-            mLoginView.setBackgroundResource(R.drawable.button_border_lively);
-        } else if (currentTheme == TUIThemeManager.THEME_SERIOUS) {
-            logo.setBackgroundResource(R.drawable.demo_ic_logo_serious);
-            mLoginView.setBackgroundResource(R.drawable.button_border_serious);
-        }
     }
 
     @Override

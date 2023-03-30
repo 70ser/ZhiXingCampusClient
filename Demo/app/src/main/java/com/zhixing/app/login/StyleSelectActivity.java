@@ -95,9 +95,7 @@ public class StyleSelectActivity extends BaseLightActivity {
     }
 
     private void notifyThemeChanged() {
-        Intent intent = new Intent();
-        intent.setAction(ThemeSelectActivity.DEMO_THEME_CHANGED_ACTION);
-        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
+        return;
     }
 
     private void initData() {

@@ -63,10 +63,6 @@
             android:screenOrientation="portrait" />
 
 
-        <activity android:name=".login.ThemeSelectActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".login.LanguageSelectActivity"
-            android:screenOrientation="portrait"/>
         <activity android:name=".login.StyleSelectActivity"
             android:screenOrientation="portrait"/>
 
