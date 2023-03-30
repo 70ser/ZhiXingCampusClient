@@ -71,8 +71,6 @@ public class DemoApplication extends Application {
 
             // add Demo theme
             TUIThemeManager.addLightTheme(R.style.DemoLightTheme);
-            TUIThemeManager.addLivelyTheme(R.style.DemoLivelyTheme);
-            TUIThemeManager.addSeriousTheme(R.style.DemoSeriousTheme);
 
             // add language changed listener
             TUICore.registerEvent(TUIConstants.TUICore.LANGUAGE_EVENT, TUIConstants.TUICore.LANGUAGE_EVENT_SUB_KEY, new ITUINotification() {
@@ -183,11 +181,7 @@ public class DemoApplication extends Application {
         intent.putExtra("LOGOUT", true);
         startActivity(intent);
 
-        if (DemoApplication.tuikit_demo_style == 0) {
-            MainActivity.finishMainActivity();
-        } else {
             MainMinimalistActivity.finishMainActivity();
-        }
     }
 
     class StatisticActivityLifecycleCallback implements ActivityLifecycleCallbacks {
