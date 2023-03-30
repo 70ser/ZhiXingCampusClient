@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -57,26 +58,20 @@ public class LoginForDevActivity extends BaseLightActivity {
     private View languageArea, styleArea;
     private View modifyTheme;
     private ImageView logo;
-
-    private BroadcastReceiver languageChangedReceiver;
-    private BroadcastReceiver themeChangedReceiver;
+    private SharedPreferences mSharedPreferences;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        languageChangedReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                initActivity();
-            }
-        };
 
-        themeChangedReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                setCurrentTheme();
-            }
-        };
+        initActivity();
+        int style =1 ;
+        DemoApplication.tuikit_demo_style = style;
+        if (mSharedPreferences != null) {
+            mSharedPreferences.edit().putInt("tuikit_demo_style", style).commit();
+        }
+        TUIThemeManager.getInstance().changeTheme(LoginForDevActivity.this, TUIThemeManager.THEME_LIGHT);
+        setCurrentTheme();
         String currentLanguage = TUIThemeManager.getInstance().getCurrentLanguage();
         if (TextUtils.isEmpty(currentLanguage)) {
             Locale locale;
@@ -89,8 +84,6 @@ public class LoginForDevActivity extends BaseLightActivity {
         }
         currentLanguage="zh";
         TUIThemeManager.getInstance().changeLanguage(LoginForDevActivity.this, currentLanguage);
-
-        IntentFilter themeFilter = new IntentFilter();
 
         initActivity();
     }
@@ -142,13 +135,8 @@ public class LoginForDevActivity extends BaseLightActivity {
                         UserInfo.getInstance().setAutoLogin(true);
                         UserInfo.getInstance().setDebugLogin(true);
                         Intent intent;
-                        if (DemoApplication.tuikit_demo_style == 0) {
-                            intent = new Intent(LoginForDevActivity.this, MainActivity.class);
-                        } else {
-                            intent = new Intent(LoginForDevActivity.this, MainMinimalistActivity.class);
-                        }
+                        intent = new Intent(LoginForDevActivity.this, MainMinimalistActivity.class);
                         startActivity(intent);
-
                         DemoApplication.instance().registerPushManually();
 
                         finish();
@@ -180,31 +168,25 @@ public class LoginForDevActivity extends BaseLightActivity {
         mUserAccount.setText(UserInfo.getInstance().getUserId());
 
 
-        styleArea.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                StyleSelectActivity.startStyleSelectActivity(LoginForDevActivity.this);
-            }
-        });
 
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        if (DemoApplication.tuikit_demo_style == 0) {
-            modifyTheme.setVisibility(View.VISIBLE);
-            styleTv.setText(getString(R.string.style_classic));
-        } else {
-            modifyTheme.setVisibility(View.GONE);
-            styleTv.setText(getString(R.string.style_minimalist));
-        }
+//        if (DemoApplication.tuikit_demo_style == 0) {
+//            modifyTheme.setVisibility(View.VISIBLE);
+//            styleTv.setText(getString(R.string.style_classic));
+//        } else {
+//            modifyTheme.setVisibility(View.GONE);
+//            styleTv.setText(getString(R.string.style_minimalist));
+//        }
     }
 
     private void setCurrentTheme() {
         int currentTheme = TUIThemeManager.getInstance().getCurrentTheme();
-            logo.setBackgroundResource(R.drawable.demo_ic_logo_light);
-            mLoginView.setBackgroundResource(R.drawable.button_border_light);
+        logo.setBackgroundResource(R.drawable.demo_ic_logo_light);
+        mLoginView.setBackgroundResource(R.drawable.button_border_light);
     }
 
     @Override
@@ -218,13 +200,6 @@ public class LoginForDevActivity extends BaseLightActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (themeChangedReceiver != null) {
-            LocalBroadcastManager.getInstance(this).unregisterReceiver(themeChangedReceiver);
-            themeChangedReceiver = null;
-        }
-        if (languageChangedReceiver != null) {
-            LocalBroadcastManager.getInstance(this).unregisterReceiver(languageChangedReceiver);
-            languageChangedReceiver = null;
-        }
+
     }
 }

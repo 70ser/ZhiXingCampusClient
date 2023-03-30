@@ -63,9 +63,6 @@
             android:screenOrientation="portrait" />
 
 
-        <activity android:name=".login.StyleSelectActivity"
-            android:screenOrientation="portrait"/>
-
         <activity
             android:name=".main.MainMinimalistActivity"
             android:launchMode="singleTask"
