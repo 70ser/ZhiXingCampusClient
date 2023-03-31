@@ -84,11 +84,8 @@ public class SplashActivity extends BaseLightActivity {
         DemoLog.i(TAG, "MainActivity" );
 
         Intent intent;
-        if (DemoApplication.tuikit_demo_style == 0) {
-            intent = new Intent(SplashActivity.this, MainActivity.class);
-        } else {
-            intent = new Intent(SplashActivity.this, MainMinimalistActivity.class);
-        }
+
+        intent = new Intent(SplashActivity.this, MainMinimalistActivity.class);
         Intent dataIntent = getIntent();
         intent.putExtras(dataIntent);
         if (dataIntent != null) {
