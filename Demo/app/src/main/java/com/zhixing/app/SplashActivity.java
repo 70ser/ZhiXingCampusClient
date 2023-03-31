@@ -10,7 +10,6 @@ import android.view.WindowManager;
 import com.tencent.imsdk.v2.V2TIMCallback;
 import com.zhixing.app.bean.UserInfo;
 import com.zhixing.app.login.LoginForDevActivity;
-import com.zhixing.app.main.MainActivity;
 import com.zhixing.app.main.MainMinimalistActivity;
 import com.zhixing.app.utils.DemoLog;
 import com.tencent.qcloud.tuicore.TUIConstants;
@@ -81,7 +80,7 @@ public class SplashActivity extends BaseLightActivity {
     }
 
     private void startMain() {
-        DemoLog.i(TAG, "MainActivity" );
+        DemoLog.i(TAG, "MainMinimalistActivity" );
 
         Intent intent;
 

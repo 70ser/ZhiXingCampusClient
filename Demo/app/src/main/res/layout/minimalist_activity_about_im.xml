@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".profile.AboutIMActivity">
+    tools:context=".profile.AboutIMMinimalistActivity">
 
     <com.tencent.qcloud.tuicore.component.MinimalistTitleBar
         android:id="@+id/about_im_title_bar"

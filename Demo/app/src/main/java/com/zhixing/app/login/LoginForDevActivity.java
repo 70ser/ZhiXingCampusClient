@@ -25,7 +25,6 @@ import com.tencent.qcloud.tuicore.util.TUIBuild;
 import com.zhixing.app.DemoApplication;
 import com.zhixing.app.R;
 import com.zhixing.app.bean.UserInfo;
-import com.zhixing.app.main.MainActivity;
 import com.zhixing.app.main.MainMinimalistActivity;
 import com.zhixing.app.signature.GenerateTestUserSig;
 import com.zhixing.app.utils.DemoLog;

@@ -38,13 +38,6 @@
         </receiver>
 
         <activity
-            android:name=".profile.SelfDetailActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".profile.AboutIMActivity"
-            android:screenOrientation="portrait" />
-
-
-        <activity
             android:name=".main.MainMinimalistActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"

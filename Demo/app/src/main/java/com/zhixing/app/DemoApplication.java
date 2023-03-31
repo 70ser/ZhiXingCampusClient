@@ -18,7 +18,6 @@ import com.tencent.imsdk.v2.V2TIMManager;
 import com.tencent.imsdk.v2.V2TIMValueCallback;
 import com.zhixing.app.bean.UserInfo;
 import com.zhixing.app.login.LoginForDevActivity;
-import com.zhixing.app.main.MainActivity;
 import com.zhixing.app.main.MainMinimalistActivity;
 import com.zhixing.app.push.OfflinePushAPIDemo;
 import com.zhixing.app.push.OfflinePushConfigs;
