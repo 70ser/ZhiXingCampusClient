@@ -3,7 +3,9 @@
 
     <string name="test_custom_message">View Details>></string>
 
-
+    //change
+    <string name="showshop">商品</string>
+    <string name="password_login2">密码</string>
     // 登录相关
     <string name="account">Username</string>
     <string name="password">Password</string>
