@@ -127,12 +127,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:background="@drawable/cust_input"
             android:layout_height="60dp"
             android:layout_marginTop="60dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="90dp"
+                android:layout_margin="10dp"
                 android:layout_height="match_parent"
                 android:textSize="16sp"
                 android:gravity="center_vertical"
@@ -144,14 +146,40 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textSize="18sp"
-                android:background="@null"
                 android:gravity="center_vertical"
                 android:hint="@string/account_hint"
                 android:textCursorDrawable="@drawable/my_cursor"
                 android:singleLine="true" />
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/cust_input"
+            android:orientation="horizontal">
 
+            <TextView
+                android:layout_margin="10dp"
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:textSize="16sp"
+
+                android:gravity="center_vertical"
+                android:text="@string/password_login2"
+                android:textColor="#000" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="18sp"
+                android:inputType="textPassword"
+                android:gravity="center_vertical"
+                android:textCursorDrawable="@drawable/my_cursor"
+                android:singleLine="true" />
+
+        </LinearLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"

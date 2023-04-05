@@ -115,6 +115,33 @@
                     android:textSize="13.6sp"
                     android:visibility="gone" />
             </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/show"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="tabClick">
+
+                <ImageView
+                    android:id="@+id/showname"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:background="?attr/demo_main_tab_profile_normal_bg" />
+
+                <TextView
+                    android:id="@+id/shows"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showname"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="@string/showshop"
+                    android:textColor="?attr/demo_main_tab_normal_text_color"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/myself_btn_group"
