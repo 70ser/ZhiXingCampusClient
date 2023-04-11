@@ -89,13 +89,6 @@ public class LoginForDevActivity extends BaseLightActivity {
 
     private void initActivity() {
         setContentView(R.layout.login_for_dev_activity);
-
-        styleArea = findViewById(R.id.modify_style);
-        styleTv = findViewById(R.id.demo_login_style_tv);
-
-        languageArea = findViewById(R.id.language_area);
-        languageTv = findViewById(R.id.demo_login_language);
-        modifyTheme = findViewById(R.id.modify_theme);
         logo = findViewById(R.id.logo);
         if (Build.VERSION.SDK_INT >= 21) {
             View decorView = getWindow().getDecorView();
