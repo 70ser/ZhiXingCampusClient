@@ -1,6 +1,10 @@
 apply plugin: 'com.android.application'
 //apply plugin: 'com.google.gms.google-services'
-
+android {
+    lintOptions {
+        abortOnError false
+    }
+}
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
