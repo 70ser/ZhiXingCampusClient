@@ -98,6 +98,7 @@
     <string name="minimalist_tab_settings_tab_text">Settings</string>
     <string name="minimalist_tab_contacts_tab_text">Contacts</string>
     <string name="tab_community_tab_text">Community</string>
+    <string name="资讯">news</string>
 
 
     <string name="conversation_title">Tencent Cloud·IM</string>
@@ -209,4 +210,6 @@
 
     <string name="chat_security_warning">[Security Reminder] This App is only used to experience the features of Tencent Cloud IM products, and cannot be used for business negotiation and expansion. Please do not trust remittance, winning the lottery and other information related to money, do not easily make strange phone calls, beware of being deceived.</string>
     <string name="chat_security_warning_report">Report</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

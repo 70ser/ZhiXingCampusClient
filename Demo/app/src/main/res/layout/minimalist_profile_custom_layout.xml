@@ -52,10 +52,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="15.36dp"
-            app:custom_width="51dp"
             android:textOff=""
             android:textOn=""
             android:thumb="@drawable/minimalist_switch_thumb"
+            app:custom_width="51dp"
             app:track="@drawable/minimalist_switch_track" />
     </LinearLayout>
 
