@@ -53,6 +53,8 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
     private static final String TAG = MainMinimalistActivity.class.getSimpleName();
     private TextView mConversationBtnText;
     private TextView mContactBtnText;
+    private TextView mContactBtnT;
+    private ImageView mContactBtnI;
     private TextView mProfileSelfBtnText;
     private ImageView mConversationBtnIcon;
     private ImageView mContactBtnIcon;
@@ -115,6 +117,8 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
 
         mConversationBtnText = findViewById(R.id.conversation);
         mContactBtnText = findViewById(R.id.contact);
+        mContactBtnI=findViewById(R.id.tab_community_icon);
+        mContactBtnT=findViewById(R.id.tab_community_tv);
         mProfileSelfBtnText = findViewById(R.id.mine);
         mConversationBtnIcon = findViewById(R.id.tab_conversation_icon);
         mContactBtnIcon = findViewById(R.id.tab_contact_icon);
@@ -126,12 +130,12 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
         fragments.add(new TUIConversationMinimalistFragment());
         fragments.add(new TUIContactMinimalistFragment());
         fragments.add(new ProfileMinimalistFragment());
-
+        fragments.add(new BlankFragment());
         mainViewPager = findViewById(R.id.view_pager);
         FragmentAdapter fragmentAdapter = new FragmentAdapter(this);
         fragmentAdapter.setFragmentList(fragments);
         mainViewPager.setUserInputEnabled(false);
-        mainViewPager.setOffscreenPageLimit(4);
+        mainViewPager.setOffscreenPageLimit(5);
         mainViewPager.setAdapter(fragmentAdapter);
         mainViewPager.setCurrentItem(0, false);
         prepareToClearAllUnreadMessage();
@@ -218,23 +222,23 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
                         V2TIMConversation.V2TIM_CONVERSATION_MARK_TYPE_UNREAD,
                         false,
                         new V2TIMValueCallback<List<V2TIMConversationOperationResult>>() {
-                    @Override
-                    public void onSuccess(List<V2TIMConversationOperationResult> v2TIMConversationOperationResults) {
-                        for (V2TIMConversationOperationResult result : v2TIMConversationOperationResults) {
-                            if (result.getResultCode() == BaseConstants.ERR_SUCC) {
-                                V2TIMConversation v2TIMConversation = markUnreadMap.get(result.getConversationID());
-                                if (!v2TIMConversation.getMarkList().contains(V2TIMConversation.V2TIM_CONVERSATION_MARK_TYPE_HIDE)) {
-                                    markUnreadMap.remove(result.getConversationID());
+                            @Override
+                            public void onSuccess(List<V2TIMConversationOperationResult> v2TIMConversationOperationResults) {
+                                for (V2TIMConversationOperationResult result : v2TIMConversationOperationResults) {
+                                    if (result.getResultCode() == BaseConstants.ERR_SUCC) {
+                                        V2TIMConversation v2TIMConversation = markUnreadMap.get(result.getConversationID());
+                                        if (!v2TIMConversation.getMarkList().contains(V2TIMConversation.V2TIM_CONVERSATION_MARK_TYPE_HIDE)) {
+                                            markUnreadMap.remove(result.getConversationID());
+                                        }
+                                    }
                                 }
                             }
-                        }
-                    }
 
-                    @Override
-                    public void onError(int code, String desc) {
-                        DemoLog.e(TAG, "triggerClearAllUnreadMessage->markConversation error:" + code + ", desc:" + ErrorMessageConverter.convertIMError(code, desc));
-                    }
-                });
+                            @Override
+                            public void onError(int code, String desc) {
+                                DemoLog.e(TAG, "triggerClearAllUnreadMessage->markConversation error:" + code + ", desc:" + ErrorMessageConverter.convertIMError(code, desc));
+                            }
+                        });
             }
 
             @Override
@@ -291,6 +295,11 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
                 mProfileSelfBtnText.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
                 mProfileSelfBtnIcon.setBackground(getResources().getDrawable(R.drawable.demo_overseas_main_tab_settings_selected_bg));
                 break;
+            case R.id.news_btn_group:
+                mainViewPager.setCurrentItem(3, false);
+                mContactBtnT.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
+                mContactBtnI.setBackground(getResources().getDrawable(R.drawable.demo_main_tab_community_selected_light));
+                break;
             default:
                 break;
         }
@@ -303,6 +312,9 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
         mContactBtnIcon.setBackground(getResources().getDrawable(R.drawable.demo_overseas_main_tab_contact_normal_bg));
         mProfileSelfBtnText.setTextColor(getResources().getColor(com.tencent.qcloud.tuicore.R.color.core_light_bg_secondary_text_color_light));
         mProfileSelfBtnIcon.setBackground(getResources().getDrawable(R.drawable.demo_overseas_main_tab_settings_normal_bg));
+        mContactBtnT.setTextColor(getResources().getColor(com.tencent.qcloud.tuicore.R.color.core_light_bg_secondary_text_color_light));
+        mContactBtnI.setBackground(getResources().getDrawable(R.drawable.demo_community_not_selected));
+
     }
 
     private final V2TIMFriendshipListener friendshipListener = new V2TIMFriendshipListener() {
