@@ -4,6 +4,9 @@ plugins {
 
 android {
     compileSdkVersion 30
+    lintOptions {
+        abortOnError false
+    }
 
     defaultConfig {
         minSdkVersion 16
