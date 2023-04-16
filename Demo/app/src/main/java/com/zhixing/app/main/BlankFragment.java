@@ -32,7 +32,8 @@ public class BlankFragment extends Fragment {
 
         // Inflate the layout for this fragment
         Root = inflater.inflate(R.layout.fragment_blank, container, false);
-        TextView A=Root.findViewById(R.id.K1);
+
         return Root;
     }
+
 }
