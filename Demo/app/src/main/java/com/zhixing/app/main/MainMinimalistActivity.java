@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -69,13 +70,13 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
 
     private static WeakReference<MainMinimalistActivity> instance;
     private BroadcastReceiver unreadCountReceiver;
-
+    Button Shop1;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         DemoLog.i(TAG, "onCreate");
         super.onCreate(savedInstanceState);
         instance = new WeakReference<>(this);
-
+        Shop1=findViewById(R.id.Shop);
         initView();
         initUnreadCountReceiver();
     }
@@ -131,11 +132,12 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
         fragments.add(new TUIContactMinimalistFragment());
         fragments.add(new ProfileMinimalistFragment());
         fragments.add(new BlankFragment());
+        fragments.add(new BlankFragment2());
         mainViewPager = findViewById(R.id.view_pager);
         FragmentAdapter fragmentAdapter = new FragmentAdapter(this);
         fragmentAdapter.setFragmentList(fragments);
         mainViewPager.setUserInputEnabled(false);
-        mainViewPager.setOffscreenPageLimit(5);
+        mainViewPager.setOffscreenPageLimit(6);
         mainViewPager.setAdapter(fragmentAdapter);
         mainViewPager.setCurrentItem(0, false);
         prepareToClearAllUnreadMessage();
@@ -280,6 +282,11 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
     public void tabClick(View view) {
         resetMenuState();
         switch (view.getId()) {
+            case R.id.Shop:
+                mainViewPager.setCurrentItem(4, false);
+                mContactBtnT.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
+                mContactBtnI.setBackground(getResources().getDrawable(R.drawable.demo_main_tab_community_selected_light));
+                break;
             case R.id.conversation_btn_group:
                 mainViewPager.setCurrentItem(0, false);
                 mConversationBtnText.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
