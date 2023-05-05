@@ -56,6 +56,8 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
     private TextView mContactBtnText;
     private TextView mContactBtnT;
     private ImageView mContactBtnI;
+    private TextView mainContactBtnT;
+    private ImageView mainContactBtnI;
     private TextView mProfileSelfBtnText;
     private ImageView mConversationBtnIcon;
     private ImageView mContactBtnIcon;
@@ -121,6 +123,8 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
         mContactBtnI=findViewById(R.id.tab_community_icon);
         mContactBtnT=findViewById(R.id.tab_community_tv);
         mProfileSelfBtnText = findViewById(R.id.mine);
+        mainContactBtnI=findViewById(R.id.tab_main_icon);
+        mainContactBtnT=findViewById(R.id.main);
         mConversationBtnIcon = findViewById(R.id.tab_conversation_icon);
         mContactBtnIcon = findViewById(R.id.tab_contact_icon);
         mProfileSelfBtnIcon = findViewById(R.id.tab_profile_icon);
@@ -128,16 +132,22 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
         mNewFriendUnread = findViewById(R.id.new_friend_total_unread);
 
         fragments = new ArrayList<>();
+        fragments.add(new main_main());
         fragments.add(new TUIConversationMinimalistFragment());
         fragments.add(new TUIContactMinimalistFragment());
         fragments.add(new ProfileMinimalistFragment());
         fragments.add(new BlankFragment());
         fragments.add(new BlankFragment2());
+        fragments.add(new BlankFragment3());
+        fragments.add(new BlankFragment4());
+        fragments.add(new BlankFragment5());
+        fragments.add(new add());
+
         mainViewPager = findViewById(R.id.view_pager);
         FragmentAdapter fragmentAdapter = new FragmentAdapter(this);
         fragmentAdapter.setFragmentList(fragments);
         mainViewPager.setUserInputEnabled(false);
-        mainViewPager.setOffscreenPageLimit(6);
+        mainViewPager.setOffscreenPageLimit(10);
         mainViewPager.setAdapter(fragmentAdapter);
         mainViewPager.setCurrentItem(0, false);
         prepareToClearAllUnreadMessage();
@@ -278,34 +288,63 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
         });
     }
 
-
     public void tabClick(View view) {
         resetMenuState();
         switch (view.getId()) {
+            case R.id.shop_more:
+                mainViewPager.setCurrentItem(9, false);
+                mContactBtnT.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
+                mContactBtnI.setBackground(getResources().getDrawable(R.drawable.demo_main_tab_community_selected_light));
+                break;
+
+            case R.id.adI1:
+            case R.id.shopI1:
+                mainViewPager.setCurrentItem(6, false);
+                mContactBtnT.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
+                mContactBtnI.setBackground(getResources().getDrawable(R.drawable.demo_main_tab_community_selected_light));
+                break;
+            case R.id.adI2:
+            case R.id.shopI2:
+                mainViewPager.setCurrentItem(7, false);
+                mContactBtnT.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
+                mContactBtnI.setBackground(getResources().getDrawable(R.drawable.demo_main_tab_community_selected_light));
+                break;
+            case R.id.adI3:
+            case R.id.shopI3  :
+                mainViewPager.setCurrentItem(8, false);
+                mContactBtnT.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
+                mContactBtnI.setBackground(getResources().getDrawable(R.drawable.demo_main_tab_community_selected_light));
+                break;
+
             case R.id.Shop:
-                mainViewPager.setCurrentItem(4, false);
+                mainViewPager.setCurrentItem(5, false);
                 mContactBtnT.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
                 mContactBtnI.setBackground(getResources().getDrawable(R.drawable.demo_main_tab_community_selected_light));
                 break;
             case R.id.conversation_btn_group:
-                mainViewPager.setCurrentItem(0, false);
+                mainViewPager.setCurrentItem(1, false);
                 mConversationBtnText.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
                 mConversationBtnIcon.setBackground(getResources().getDrawable(R.drawable.demo_overseas_main_tab_conversation_selected));
                 break;
             case R.id.contact_btn_group:
-                mainViewPager.setCurrentItem(1, false);
+                mainViewPager.setCurrentItem(2, false);
                 mContactBtnText.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
                 mContactBtnIcon.setBackground(getResources().getDrawable(R.drawable.demo_overseas_main_tab_contact_selected_bg));
                 break;
             case R.id.myself_btn_group:
-                mainViewPager.setCurrentItem(2, false);
+                mainViewPager.setCurrentItem(3, false);
                 mProfileSelfBtnText.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
                 mProfileSelfBtnIcon.setBackground(getResources().getDrawable(R.drawable.demo_overseas_main_tab_settings_selected_bg));
                 break;
             case R.id.news_btn_group:
-                mainViewPager.setCurrentItem(3, false);
+                mainViewPager.setCurrentItem(4, false);
                 mContactBtnT.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
                 mContactBtnI.setBackground(getResources().getDrawable(R.drawable.demo_main_tab_community_selected_light));
+                break;
+            case R.id.contact_main_group:
+                mainViewPager.setCurrentItem(0, false);
+                mainContactBtnT.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
+                mainContactBtnI.setBackground(getResources().getDrawable(R.drawable.main_login_language_icon_light));
                 break;
             default:
                 break;
@@ -321,6 +360,8 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
         mProfileSelfBtnIcon.setBackground(getResources().getDrawable(R.drawable.demo_overseas_main_tab_settings_normal_bg));
         mContactBtnT.setTextColor(getResources().getColor(com.tencent.qcloud.tuicore.R.color.core_light_bg_secondary_text_color_light));
         mContactBtnI.setBackground(getResources().getDrawable(R.drawable.demo_community_not_selected));
+        mainContactBtnT.setTextColor(getResources().getColor(com.tencent.qcloud.tuicore.R.color.core_light_bg_secondary_text_color_light));
+        mainContactBtnI.setBackground(getResources().getDrawable(R.drawable.demo_login_language_icon_light));
 
     }
 

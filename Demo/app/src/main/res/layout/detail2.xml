@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/gray_400">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:textSize="30dp"
+                android:id="@+id/new_detail_title"
+                android:text="onplus8pro"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="30dp"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/new_detail_time"
+                android:text="发布者：李鑫"/>
+            <TextView
+                android:layout_marginLeft="30dp"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/new_detail_author"
+                android:text="价格：4999￥"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/new_detail_text"
+            android:textSize="15dp"/>
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:scaleType="centerInside"
+            android:background="@drawable/s2"/>
+    </LinearLayout>
+
+
+</LinearLayout>

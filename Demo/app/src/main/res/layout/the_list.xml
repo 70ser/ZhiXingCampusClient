@@ -22,8 +22,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="36.5dp"
                 android:layout_marginTop="7.3dp"
-                android:text="66666666"
+                android:text="商品详情"
                 android:textSize="20sp" />
+            <Button
+                android:onClick="tabClick"
+                android:text="发布"
+                android:id="@+id/shop_more"
+                android:layout_marginLeft="400px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 
@@ -34,14 +41,12 @@
             android:layout_height="wrap_content">
             <ImageView
                 android:layout_marginLeft="11dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minHeight="55dp"
-                android:minWidth="55dp"
-                android:maxHeight="55dp"
-                android:maxWidth="55dp"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:scaleType="centerInside"
+                android:onClick="tabClick"
                 android:id="@+id/adI1"
-                android:background="@drawable/check_box_selected"/>
+                android:background="@drawable/s1"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -52,7 +57,7 @@
                     android:layout_marginLeft="73dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="66666666"/>
+                    android:text="oppo耳机"/>
                 <TextView
                     android:layout_marginTop="3dp"
                     android:layout_marginLeft="11dp"
@@ -61,27 +66,25 @@
                     android:id="@+id/ad_abstract1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="55555555555500000000000000000000000000000000000000000000000000000000005555"/>
+                    android:text="oppo真无线耳机，这个耳机大概9成新吧，只用了不到一周的时间，白色的蓝牙耳机，品质可以保证，附带有充电器，主要是由于别人送了我一个，所以这个就打算出手了，给有需要的其他人。"/>
             </LinearLayout>
 
 
         </LinearLayout>
         <LinearLayout
             android:id="@+id/ad2"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
             <ImageView
                 android:layout_marginLeft="11dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minHeight="55dp"
-                android:minWidth="55dp"
-                android:maxHeight="55dp"
-                android:maxWidth="55dp"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:onClick="tabClick"
+                android:scaleType="centerInside"
                 android:id="@+id/adI2"
-                android:background="@drawable/check_box_selected"/>
+                android:background="@drawable/s2"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -92,7 +95,7 @@
                     android:layout_marginLeft="73dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="66666666"/>
+                    android:text="onplus8pro"/>
                 <TextView
                     android:layout_marginTop="3dp"
                     android:layout_marginLeft="11dp"
@@ -101,26 +104,24 @@
                     android:ellipsize="end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="55555555555500000000000000000000000000000000000000000000000000000000005555"/>
+                    android:text="1+8pro青空，手感非常好，十成新，纯属因为别人送的，但是自己还没换手机的想法，所以想出手，价格上图个吉利，祝愿买家心想事成，跟爱的人1314"/>
             </LinearLayout>
 
         </LinearLayout>
         <LinearLayout
             android:id="@+id/ad3"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
             <ImageView
                 android:layout_marginLeft="11dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minHeight="55dp"
-                android:minWidth="55dp"
-                android:maxHeight="55dp"
-                android:maxWidth="55dp"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:scaleType="centerInside"
+                android:onClick="tabClick"
                 android:id="@+id/adI3"
-                android:background="@drawable/check_box_selected"/>
+                android:background="@drawable/s3"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -131,7 +132,7 @@
                     android:layout_marginLeft="73dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="66666666"/>
+                    android:text="iqoo 11"/>
                 <TextView
                     android:layout_marginTop="3dp"
                     android:layout_marginLeft="11dp"
@@ -140,26 +141,23 @@
                     android:ellipsize="end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="55555555555500000000000000000000000000000000000000000000000000000000000000000000000000005555"/>
+                    android:text="iQOO 11系列，外观上既有传承，也有突破。首先，从配色上看，iQOO 11提供了赛道、传奇、曼岛特别版三款配色，其中传奇、曼岛特别版采用了玻纤有机硅皮革材质，而赛道版则是岩晶AG玻璃。我们手中的这部iQOO 11就是传奇版，该配色依旧有标志性的传奇三色，代表竞速激情的红色，代表科技创新的黑色，代表探索未知的蓝色。选择了在高端手表表面上常使用的超精致“巴黎钉纹”(Clous de Paris)作为三色赛道的底纹，彰显精密、经典与优雅。"/>
             </LinearLayout>
 
         </LinearLayout>
         <LinearLayout
             android:id="@+id/ad4"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
             <ImageView
                 android:layout_marginLeft="11dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minHeight="55dp"
-                android:minWidth="55dp"
-                android:maxHeight="55dp"
-                android:maxWidth="55dp"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:scaleType="centerInside"
                 android:id="@+id/adI4"
-                android:background="@drawable/check_box_selected"/>
+                android:background="@drawable/s4"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -170,7 +168,7 @@
                     android:layout_marginLeft="73dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="66666666"/>
+                    android:text="iPhone14"/>
                 <TextView
                     android:layout_marginTop="3dp"
                     android:layout_marginLeft="11dp"
@@ -179,26 +177,23 @@
                     android:ellipsize="end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="55555555555500000000000000000000000000000000000000000000000000000000000000000000000000005555"/>
+                    android:text="苹果14，最新款的苹果手机，用着很好，只是因为某些原因想换个别的手机了，可以说是9成新，价格上优惠了几百，喜欢的人可以入手，颜色是金色的，颜值很高，性能也不错"/>
             </LinearLayout>
 
         </LinearLayout>
         <LinearLayout
             android:id="@+id/ad5"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
             <ImageView
                 android:layout_marginLeft="11dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minHeight="55dp"
-                android:minWidth="55dp"
-                android:maxHeight="55dp"
-                android:maxWidth="55dp"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:scaleType="centerInside"
                 android:id="@+id/adI5"
-                android:background="@drawable/check_box_selected"/>
+                android:background="@drawable/s5"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -209,7 +204,7 @@
                     android:layout_marginLeft="73dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="66666666"/>
+                    android:text="华为nova系列手机"/>
                 <TextView
                     android:layout_marginTop="3dp"
                     android:layout_marginLeft="11dp"
@@ -218,7 +213,7 @@
                     android:ellipsize="end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="55555555555500000000000000000000000000000000000000000000000000000000000000000000000000005555"/>
+                    android:text="华为nova5i，很经典的一款手机了，可能也没那么经典，但是正常的功能都可以用，没有什么破损之类的，纯属是因为自己有别的手机了，这个是熟人送的，所以便宜了一点点出手，算是一点小优惠吧。"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -230,14 +225,11 @@
             >
             <ImageView
                 android:layout_marginLeft="11dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minHeight="55dp"
-                android:minWidth="55dp"
-                android:maxHeight="55dp"
-                android:maxWidth="55dp"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:scaleType="centerInside"
                 android:id="@+id/adI6"
-                android:background="@drawable/check_box_selected"/>
+                android:background="@drawable/s6"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -248,7 +240,7 @@
                     android:layout_marginLeft="73dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="66666666"/>
+                    android:text="滑板plan B"/>
                 <TextView
                     android:layout_marginTop="3dp"
                     android:layout_marginLeft="11dp"
@@ -257,26 +249,23 @@
                     android:ellipsize="end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="55555555555500000000000000000000000000000000000000000000000000000000000000000000000000005555"/>
+                    android:text="名牌滑板，中国暂时没有购买渠道，非常稀有，想购买的话，基本上需要外国代购才可以，本土是没有销售渠道的，9成新，买完之后自己不怎么滑，可惜了这么好的滑板，所以想出售给真正需要的人。价格便宜了大概500吧，算是福利了。"/>
             </LinearLayout>
 
         </LinearLayout>
         <LinearLayout
             android:id="@+id/ad7"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
             <Button
                 android:layout_marginLeft="11dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minHeight="55dp"
-                android:minWidth="55dp"
-                android:maxHeight="55dp"
-                android:maxWidth="55dp"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:scaleType="centerInside"
                 android:id="@+id/adI7"
-                android:background="@drawable/check_box_selected"/>
+                android:background="@drawable/s7"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -287,7 +276,7 @@
                     android:layout_marginLeft="73dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="66666666"/>
+                    android:text="高等数学"/>
                 <TextView
                     android:layout_marginTop="3dp"
                     android:layout_marginLeft="11dp"
@@ -296,26 +285,23 @@
                     android:ellipsize="end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="55555555555500000000000000000000000000000000000000000000000000000000000000000000000000005555"/>
+                    android:text="唐月红、曹荣美、王正盛主编的，可能内容跟大家学的会有细微的差别，但是总体内容是没有太大变化的，想拓宽自己知识面的同学可以入手，价格非常低了。"/>
             </LinearLayout>
 
         </LinearLayout>
         <LinearLayout
             android:id="@+id/ad8"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
             <ImageView
                 android:layout_marginLeft="11dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minHeight="55dp"
-                android:minWidth="55dp"
-                android:maxHeight="55dp"
-                android:maxWidth="55dp"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:scaleType="centerInside"
                 android:id="@+id/adI8"
-                android:background="@drawable/check_box_selected"/>
+                android:background="@drawable/s8"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -326,7 +312,7 @@
                     android:layout_marginLeft="73dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="66666666"/>
+                    android:text="红宝书"/>
                 <TextView
                     android:layout_marginTop="3dp"
                     android:layout_marginLeft="11dp"
@@ -335,26 +321,23 @@
                     android:ellipsize="end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="55555555555500000000000000000000000000000000000000000000000000000000000000000000000000005555"/>
+                    android:text="考研英语词汇，这款考研词汇书是我用过的，效果还可以，当然这个价格相信仅此一家了，想给有需要的人，让这本书多发挥点自己的价值吧。"/>
             </LinearLayout>
 
         </LinearLayout>
         <LinearLayout
             android:id="@+id/ad9"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
             <ImageView
                 android:layout_marginLeft="11dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minHeight="55dp"
-                android:minWidth="55dp"
-                android:maxHeight="55dp"
-                android:maxWidth="55dp"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:scaleType="centerInside"
                 android:id="@+id/adI9"
-                android:background="@drawable/check_box_selected"/>
+                android:background="@drawable/s10"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -365,7 +348,7 @@
                     android:layout_marginLeft="73dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="66666666"/>
+                    android:text="华硕灵耀14 i7"/>
                 <TextView
                     android:layout_marginTop="3dp"
                     android:layout_marginLeft="11dp"
@@ -374,11 +357,11 @@
                     android:ellipsize="end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="55555555555500000000000000000000000000000000000000000000000000000000000000000000000000005555"/>
+                    android:text="1065G7/16GB/512GB/核显，八成新，这个电脑主要是由于自己想换个别的品牌，比之原价便宜了1000块，可以说是非常赔了，但是对于买家来说，非常赚，机不可失，失不再来。"/>
             </LinearLayout>
 
         </LinearLayout>
 
     </LinearLayout>
 
-    </LinearLayout>
+</LinearLayout>

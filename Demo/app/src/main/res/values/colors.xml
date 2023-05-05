@@ -12,7 +12,7 @@
     <color name="tab_text_selected_color">#006EFF</color>
     <color name="tab_text_normal_color">#888888</color>
     <color name="colorCloudShallow">#84C1FF</color>
-
+    <color name="grey_100">#D3D3D6</color>
     <color name="colorActivityBackground">#ffffff</color>
     <color name="colorDivider">#737373</color>
     <color name="textSecond">#737373</color>
