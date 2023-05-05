@@ -65,7 +65,7 @@
                 android:textColor="#000" />
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/login_password"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textSize="18sp"

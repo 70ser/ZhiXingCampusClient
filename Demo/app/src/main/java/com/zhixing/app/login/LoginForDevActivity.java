@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -21,10 +22,13 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import com.google.gson.JsonObject;
 import com.tencent.qcloud.tuicore.util.TUIBuild;
 import com.zhixing.app.DemoApplication;
 import com.zhixing.app.R;
+import com.zhixing.app.bean.User;
 import com.zhixing.app.bean.UserInfo;
+import com.zhixing.app.common.HttpUtils;
 import com.zhixing.app.main.MainMinimalistActivity;
 import com.zhixing.app.signature.GenerateTestUserSig;
 import com.zhixing.app.utils.DemoLog;
@@ -53,9 +57,7 @@ public class LoginForDevActivity extends BaseLightActivity {
     private static final String TAG = LoginForDevActivity.class.getSimpleName();
     private TextView mLoginView;
     private EditText mUserAccount;
-    private TextView languageTv, styleTv;
-    private View languageArea, styleArea;
-    private View modifyTheme;
+    private EditText mUserPassword;
     private ImageView logo;
     private SharedPreferences mSharedPreferences;
 
@@ -102,12 +104,21 @@ public class LoginForDevActivity extends BaseLightActivity {
         // 用户名可以是任意非空字符，但是前提需要按照下面文档修改代码里的 SDKAPPID 与 PRIVATEKEY
         // https://github.com/tencentyun/TIMSDK/tree/master/Android
         mUserAccount = findViewById(R.id.login_user);
+        mUserPassword = findViewById(R.id.login_password);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         mLoginView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DemoApplication.instance().init(0);
 
+
+                String username = mUserAccount.getText().toString();
+                String password = mUserPassword.getText().toString();
+                JsonObject jsonObject =  HttpUtils.doGet("user/login?username="+username+"&password="+password);
+                if(jsonObject==null) return;
+                User user = HttpUtils.unpackJson(jsonObject, User.class);
+                Log.d("UserTag", "onClick: "+user);
+                System.out.println(user);
                 UserInfo.getInstance().setUserId(mUserAccount.getText().toString());
                 String userSig = GenerateTestUserSig.genTestUserSig(mUserAccount.getText().toString());
                 UserInfo.getInstance().setUserSig(userSig);
@@ -158,9 +169,6 @@ public class LoginForDevActivity extends BaseLightActivity {
             }
         });
         mUserAccount.setText(UserInfo.getInstance().getUserId());
-
-
-
     }
 
     @Override
