@@ -7,8 +7,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.zhixing.app.R;
+import com.zhixing.app.bean.Shop;
+import com.zhixing.app.bean.User;
+import com.zhixing.app.bean.UserInfo;
+import com.zhixing.app.common.HttpUtils;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +32,9 @@ public class add extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private Button submit;
+    private EditText shopName;
+    private EditText shopDetail;
     public add() {
         // Required empty public constructor
     }
@@ -60,7 +69,21 @@ public class add extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_add, container, false);
+        submit = view.findViewById(R.id.shop_add);
+        shopName = view.findViewById(R.id.shop_name);
+        shopDetail = view.findViewById(R.id.shop_detail);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = shopName.getText().toString();
+                String detail = shopDetail.getText().toString();
+                Integer owner = UserInfo.getInstance().getUser().getId();
+                Shop shop = new Shop(name, detail,99.0,owner);
+                HttpUtils.doPost("shop",shop,"商品提交成功");
+            }
+        });
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add, container, false);
+        return view;
     }
 }

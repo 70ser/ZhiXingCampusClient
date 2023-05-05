@@ -3,7 +3,9 @@ package com.zhixing.app.bean;
 import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.zhixing.app.DemoApplication;
+import com.zhixing.app.common.HttpUtils;
 import com.zhixing.app.utils.TUIKitConstants;
 
 import java.io.Serializable;
@@ -24,6 +26,28 @@ public class UserInfo implements Serializable {
     private String avatar;
     private boolean autoLogin;
     private boolean debugLogin = false;
+
+    private User user;
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public User getUser() {
+        if(user ==null ){
+            User tuser = new User();
+            //因为登录时已经验证过用户名和密码，所以这里一定能拿到
+            JsonObject jsonObject =  HttpUtils.doGet("user/name/"+userId);
+            if(jsonObject==null){
+                tuser.setUsername(userId);
+            }
+            else{
+                tuser = HttpUtils.unpackJson(jsonObject, User.class);
+            }
+            setUser(tuser);
+        }
+        return user;
+    }
 
     public synchronized static UserInfo getInstance() {
         if (sUserInfo == null) {

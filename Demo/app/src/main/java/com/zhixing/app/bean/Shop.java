@@ -1,5 +1,7 @@
 package com.zhixing.app.bean;
 
+import android.content.Intent;
+
 import java.io.Serializable;
 
 import lombok.Getter;
@@ -27,13 +29,24 @@ public class Shop implements Serializable {
       private String shopName;
 
       //Property("商品价格")
-      private Object shopPrice;
+      private Double shopPrice;
 
       //Property("商品描述")
       private String shopDescription;
 
       //Property("商品发布人")
-      private String shopOwner;
+      private Integer shopOwner;
 
 
+      public Shop(String shopName, String shopDescription) {
+    	  this.shopName = shopName;
+    	  this.shopDescription = shopDescription;
+
+      }
+      public Shop(String shopName, String shopDescription, Double shopPrice,Integer shopOwner) {
+    	  this.shopName = shopName;
+    	  this.shopDescription = shopDescription;
+    	  this.shopPrice = shopPrice;
+          this.shopOwner = shopOwner;
+      }
 }

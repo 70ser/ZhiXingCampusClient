@@ -31,11 +31,11 @@ public class HttpUtils {
                 return unpackData(ret);
             }
             else{
-                showErrorToast("网络错误,请重试");
+                showToast("网络错误,请重试");
                 return null;
             }
         } catch (InterruptedException e) {
-            showErrorToast("系统错误,请重试");
+            showToast("系统错误,请重试");
             e.printStackTrace();
             return null;
         }
@@ -72,7 +72,9 @@ public class HttpUtils {
             return null;
         }
     }
-    public static <T> JsonObject doPost(String apiUrl,T data){
+
+    //post请求不需要返回信息，只返回是否操作成功
+    public static <T> JsonObject doPost(String apiUrl,T data,String successmsg){
         String json = new Gson().toJson(data);
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -84,14 +86,22 @@ public class HttpUtils {
         try {
             thread.join();
             if(ret!=null){
-                return unpackData(ret);
+                JsonObject jsonObject = JsonParser.parseString(ret).getAsJsonObject();
+                if(jsonObject.get("code").getAsString().equals(Constants.CODE_200)){
+                    showToast(successmsg);
+                    return null;
+                }
+                else{
+                    showToast(jsonObject.get("msg").getAsString());
+                    return null;
+                }
             }
             else{
-                showErrorToast("网络错误,请重试");
+                showToast("网络错误,请重试");
                 return null;
             }
         } catch (InterruptedException e) {
-            showErrorToast("系统错误,请重试");
+            showToast("系统错误,请重试");
             e.printStackTrace();
             return null;
         }
@@ -140,11 +150,11 @@ public class HttpUtils {
             return jsonObject.get("data").getAsJsonObject();
         }
         else{
-            showErrorToast(jsonObject.get("msg").getAsString());
+            showToast(jsonObject.get("msg").getAsString());
             return null;
         }
     }
-    public static void showErrorToast(String msg) {
+    public static void showToast(String msg) {
         Context context = DemoApplication.instance().getApplicationContext();
         Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
     }

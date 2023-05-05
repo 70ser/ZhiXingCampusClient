@@ -40,4 +40,11 @@ public class User implements Serializable {
       //Property("手机号，可以为空")
       private String phone;
 
+    public Integer getId() {
+      return id;
+    }
+
+  public void setUsername(String username) {
+    this.username = username;
+  }
 }
