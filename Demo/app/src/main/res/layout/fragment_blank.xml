@@ -7,8 +7,10 @@
     android:orientation="vertical"
     tools:context=".BlankFragment">
     <LinearLayout
+        android:layout_marginTop="50px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/grey_100"
         android:orientation="vertical">
 
 
@@ -22,6 +24,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="36.5dp"
                 android:layout_marginTop="7.3dp"
+
                 android:text="商品信息"
                 android:textSize="20sp" />
 
@@ -46,6 +49,7 @@
             android:orientation="horizontal">
 
             <Button
+                android:onClick="tabClick"
                 android:id="@+id/shopI1"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
@@ -74,7 +78,7 @@
                     android:layout_marginTop="3dp"
                     android:ellipsize="end"
                     android:maxLines="2"
-                    android:text="55555555555500000000000000000000000000000000000000000000000000000000005555" />
+                    android:text="oppo真无线耳机，这个耳机大概9成新吧，只用了不到一周的时间，白色的蓝牙耳机，品质可以保证，附带有充电器，主要是由于别人送了我一个，所以这个就打算出手了，给有需要的其他人。" />
             </LinearLayout>
 
             <LinearLayout
@@ -114,6 +118,7 @@
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:scaleType="centerInside"
+                android:onClick="tabClick"
                 android:id="@+id/shopI2"
                 android:background="@drawable/s2"/>
             <LinearLayout
@@ -135,7 +140,7 @@
                     android:ellipsize="end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="55555555555500000000000000000000000000000000000000000000000000000000005555"/>
+                    android:text="1+8pro青空，手感非常好，十成新，纯属因为别人送的，但是自己还没换手机的想法，所以想出手，价格上图个吉利，祝愿买家心想事成，跟爱的人1314"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -150,6 +155,7 @@
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:scaleType="centerInside"
+                android:onClick="tabClick"
                 android:id="@+id/shopI3"
                 android:background="@drawable/s3"/>
             <LinearLayout
@@ -171,11 +177,12 @@
                     android:ellipsize="end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="55555555555500000000000000000000000000000000000000000000000000000000005555"/>
+                    android:text="iQOO 11系列，外观上既有传承，也有突破。首先，从配色上看，iQOO 11提供了赛道、传奇、曼岛特别版三款配色，其中传奇、曼岛特别版采用了玻纤有机硅皮革材质，而赛道版则是岩晶AG玻璃。我们手中的这部iQOO 11就是传奇版，该配色依旧有标志性的传奇三色，代表竞速激情的红色，代表科技创新的黑色，代表探索未知的蓝色。选择了在高端手表表面上常使用的超精致“巴黎钉纹”(Clous de Paris)作为三色赛道的底纹，彰显精密、经典与优雅。"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
+        android:layout_marginTop="50px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -317,6 +324,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/grey_100"
+        android:layout_marginTop="50px"
         android:orientation="vertical">
 
 
@@ -353,7 +362,7 @@
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:scaleType="centerInside"
-                android:id="@+id/adI1"
+                android:id="@+id/zxI1"
                 android:background="@drawable/check_box_selected"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -390,7 +399,7 @@
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:scaleType="centerInside"
-                android:id="@+id/adI2"
+                android:id="@+id/zxI2"
                 android:background="@drawable/check_box_selected"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -426,7 +435,7 @@
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:scaleType="centerInside"
-                android:id="@+id/adI3"
+                android:id="@+id/zxI3"
                 android:background="@drawable/check_box_selected"/>
             <LinearLayout
                 android:layout_width="match_parent"
