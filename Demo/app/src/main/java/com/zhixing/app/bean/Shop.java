@@ -49,4 +49,13 @@ public class Shop implements Serializable {
     	  this.shopPrice = shopPrice;
           this.shopOwner = shopOwner;
       }
+
+    public String getShopName() {
+        return shopName;
+    }
+
+    public String getShopDescription() {
+        return shopDescription;
+    }
+
 }
