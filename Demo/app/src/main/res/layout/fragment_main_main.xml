@@ -6,9 +6,42 @@
     tools:context=".main.main_main">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ImageView
+        android:layout_marginLeft="0px"
+        android:layout_marginTop="20px"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:scaleType="centerInside"
+        android:background="@drawable/ic_launcher"/>
+    <LinearLayout
 
+        android:layout_marginTop="300px"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="300px">
+        <ImageView
+            android:id="@+id/classes"
+            android:onClick="tabClick"
+            android:layout_marginLeft="50px"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:scaleType="centerInside"
+            android:background="@drawable/classes"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_marginLeft="0px"
+        android:layout_marginTop="800px"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:scaleType="centerInside"
+        android:background="@drawable/ad_two"/>
+
+    <ImageView
+        android:layout_width="422dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="1300px"
+        android:background="@drawable/newss"
+        android:scaleType="centerInside" />
 </FrameLayout>

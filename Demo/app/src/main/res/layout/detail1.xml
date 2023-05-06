@@ -19,7 +19,7 @@
                 android:textStyle="bold"
                 android:layout_marginTop="5dp"
                 android:textSize="30dp"
-                android:id="@+id/new_detail_title"
+                android:id="@+id/new_detail_title1"
                 android:text="oppo耳机"/>
         </LinearLayout>
         <LinearLayout
@@ -27,19 +27,20 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+
                 android:layout_marginTop="2dp"
                 android:layout_marginLeft="30dp"
                 android:textSize="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/new_detail_time"
+                android:id="@+id/new_detail_author1"
                 android:text="发布者：1234"/>
             <TextView
                 android:layout_marginLeft="30dp"
                 android:textSize="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/new_detail_author"
+                android:id="@+id/new_detail_price1"
                 android:text="价格：499￥"/>
         </LinearLayout>
 
@@ -47,17 +48,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/new_detail_text"
-            android:textSize="15dp"/>
+        android:orientation="horizontal">
+
         <ImageView
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:scaleType="centerInside"
             android:background="@drawable/s1"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="oppo真无线耳机，这个耳机大概9成新吧，只用了不到一周的时间，白色的蓝牙耳机，品质可以保证，附带有充电器，主要是由于别人送了我一个，所以这个就打算出手了，给有需要的其他人。"
+            android:id="@+id/new_detail_text1"
+            android:textSize="15dp"/>
     </LinearLayout>
 
 

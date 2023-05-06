@@ -142,14 +142,17 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
         fragments.add(new BlankFragment4());
         fragments.add(new BlankFragment5());
         fragments.add(new add());
+        fragments.add(new schedule());
+
+
 
         mainViewPager = findViewById(R.id.view_pager);
         FragmentAdapter fragmentAdapter = new FragmentAdapter(this);
         fragmentAdapter.setFragmentList(fragments);
         mainViewPager.setUserInputEnabled(false);
-        mainViewPager.setOffscreenPageLimit(10);
+        mainViewPager.setOffscreenPageLimit(11);
         mainViewPager.setAdapter(fragmentAdapter);
-        mainViewPager.setCurrentItem(0, false);
+        mainViewPager.setCurrentItem(1, false);
         prepareToClearAllUnreadMessage();
     }
 
@@ -291,6 +294,11 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
     public void tabClick(View view) {
         resetMenuState();
         switch (view.getId()) {
+            case R.id.classes:
+                mainViewPager.setCurrentItem(11, false);
+                mainContactBtnT.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
+                mainContactBtnI.setBackground(getResources().getDrawable(R.drawable.main_login_language_icon_light));
+                break;
             case R.id.shop_more:
                 mainViewPager.setCurrentItem(9, false);
                 mContactBtnT.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
@@ -310,7 +318,7 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
                 mContactBtnI.setBackground(getResources().getDrawable(R.drawable.demo_main_tab_community_selected_light));
                 break;
             case R.id.adI3:
-            case R.id.shopI3  :
+            case R.id.helpI3:
                 mainViewPager.setCurrentItem(8, false);
                 mContactBtnT.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
                 mContactBtnI.setBackground(getResources().getDrawable(R.drawable.demo_main_tab_community_selected_light));

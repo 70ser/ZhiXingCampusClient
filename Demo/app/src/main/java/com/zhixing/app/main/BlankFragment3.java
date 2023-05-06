@@ -4,9 +4,12 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.gson.JsonObject;
 import com.zhixing.app.R;
@@ -27,6 +30,12 @@ public class BlankFragment3 extends Fragment {
 
     // TODO: Rename and change types of parameters
     private String mParam1;
+    private View Root;
+    private Button button_img;
+    private TextView title;
+    private TextView author;
+    private TextView detail;
+    private TextView price;
     private String mParam2;
 
     public BlankFragment3() {
@@ -59,13 +68,36 @@ public class BlankFragment3 extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    public void onPause() {
+        Log.i("BlankFragment", "onPause: ");
+        JsonObject ret=  HttpUtils.doGet("shop/last");
+        if(ret != null){
+            Shop shop = HttpUtils.unpackJson(ret, Shop.class);
+            author.setText("发布者：123");
+            price.setText("价格："+shop.getShopPrice()+"￥");
+            title.setText(shop.getShopName());
+            detail.setText(shop.getShopDescription());
+        }
+        super.onPause();
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-
-        return inflater.inflate(R.layout.detail1, container, false);
+        Root=inflater.inflate(R.layout.detail1, container, false);
+        button_img = Root.findViewById(R.id.shopI1);
+        title = Root.findViewById(R.id.new_detail_title1);
+        author=Root.findViewById(R.id.new_detail_author1);
+        detail = Root.findViewById(R.id.new_detail_text1);
+        price =Root.findViewById(R.id.new_detail_price1);
+        JsonObject ret=  HttpUtils.doGet("shop/last");
+        if(ret != null){
+            Shop shop = HttpUtils.unpackJson(ret, Shop.class);
+            author.setText("发布者：123");
+            price.setText("价格："+shop.getShopPrice()+"￥");
+            title.setText(shop.getShopName());
+            detail.setText(shop.getShopDescription());
+        }
+        return Root;
     }
 }

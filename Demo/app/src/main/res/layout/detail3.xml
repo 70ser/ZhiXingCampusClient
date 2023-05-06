@@ -20,7 +20,7 @@
                 android:layout_marginTop="5dp"
                 android:textSize="30dp"
                 android:id="@+id/new_detail_title"
-                android:text="iqoo 11"/>
+                android:text="带饭"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,32 +32,35 @@
                 android:textSize="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/new_detail_time"
+                android:id="@+id/new_detail_author3"
                 android:text="发布者：李鑫月"/>
             <TextView
                 android:layout_marginLeft="30dp"
                 android:textSize="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/new_detail_author"
-                android:text="价格：2999￥"/>
+                android:id="@+id/new_detail_price3"
+                android:text="报酬：3￥"/>
         </LinearLayout>
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/new_detail_text"
-            android:textSize="15dp"/>
+        android:orientation="horizontal">
+
         <ImageView
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:scaleType="centerInside"
-            android:background="@drawable/s3"/>
+            android:background="@drawable/h3"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/new_detail_text"
+            android:text="帮忙带份菊园三楼大碗饭，素菜：青菜，千叶豆腐，荤菜：鱼香肉丝，加鸡蛋"
+            android:textSize="15dp"/>
     </LinearLayout>
 
 

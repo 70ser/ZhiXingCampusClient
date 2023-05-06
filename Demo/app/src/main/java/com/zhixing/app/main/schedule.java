@@ -1,6 +1,5 @@
 package com.zhixing.app.main;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,21 +7,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 
 import com.zhixing.app.R;
-import com.zhixing.app.bean.Shop;
-import com.zhixing.app.bean.User;
-import com.zhixing.app.bean.UserInfo;
-import com.zhixing.app.common.HttpUtils;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link add#newInstance} factory method to
+ * Use the {@link schedule#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class add extends Fragment {
+public class schedule extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,11 +26,7 @@ public class add extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private Button submit;
-    private EditText shopName;
-    private EditText shopDetail;
-    private EditText shopprice;
-    public add() {
+    public schedule() {
         // Required empty public constructor
     }
 
@@ -47,11 +36,11 @@ public class add extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment add.
+     * @return A new instance of fragment schedule.
      */
     // TODO: Rename and change types and number of parameters
-    public static add newInstance(String param1, String param2) {
-        add fragment = new add();
+    public static schedule newInstance(String param1, String param2) {
+        schedule fragment = new schedule();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -68,27 +57,10 @@ public class add extends Fragment {
         }
     }
 
-    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_add, container, false);
-        submit = view.findViewById(R.id.shop_add);
-        shopName = view.findViewById(R.id.shop_name);
-        shopprice=view.findViewById(R.id.shop_price);
-        shopDetail = view.findViewById(R.id.shop_detail);
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name = shopName.getText().toString();
-                String detail = shopDetail.getText().toString();
-                double price = (double) Double.parseDouble(shopprice.getText().toString());
-                Integer owner = UserInfo.getInstance().getUser().getId();
-                Shop shop = new Shop(name, detail,price,owner);
-                HttpUtils.doPost("shop",shop,"商品提交成功");
-            }
-        });
         // Inflate the layout for this fragment
-        return view;
+        return inflater.inflate(R.layout.fragment_schedule, container, false);
     }
 }

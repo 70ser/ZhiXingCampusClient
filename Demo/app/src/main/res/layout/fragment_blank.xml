@@ -222,7 +222,7 @@
                 android:layout_height="55dp"
                 android:scaleType="centerInside"
                 android:id="@+id/helpI1"
-                android:background="@drawable/check_box_selected"/>
+                android:background="@drawable/h1"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -233,7 +233,7 @@
                     android:layout_marginLeft="73dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="66666666"/>
+                    android:text="帮取快递"/>
                 <TextView
                     android:layout_marginTop="3dp"
                     android:layout_marginLeft="11dp"
@@ -242,7 +242,7 @@
                     android:id="@+id/help_abstract1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="55555555555500000000000000000000000000000000000000000000000000000000005555"/>
+                    android:text="松园 90-2-5606"/>
             </LinearLayout>
 
 
@@ -257,7 +257,7 @@
                 android:id="@+id/helpI2"
 
                 android:layout_marginLeft="11dp"
-                android:background="@drawable/check_box_selected"
+                android:background="@drawable/h2"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:scaleType="centerInside" />
@@ -271,7 +271,7 @@
                     android:layout_marginLeft="73dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="66666666"/>
+                    android:text="维修电脑"/>
                 <TextView
                     android:layout_marginTop="3dp"
                     android:layout_marginLeft="11dp"
@@ -280,7 +280,7 @@
                     android:ellipsize="end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="55555555555500000000000000000000000000000000000000000000000000000000005555"/>
+                    android:text="菊园一号楼西539"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -296,7 +296,8 @@
                 android:layout_height="55dp"
                 android:scaleType="centerInside"
                 android:id="@+id/helpI3"
-                android:background="@drawable/check_box_selected"/>
+                android:onClick="tabClick"
+                android:background="@drawable/h3"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -307,7 +308,7 @@
                     android:layout_marginLeft="73dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="66666666"/>
+                    android:text="带饭"/>
                 <TextView
                     android:layout_marginTop="3dp"
                     android:layout_marginLeft="11dp"
@@ -316,7 +317,7 @@
                     android:ellipsize="end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="55555555555500000000000000000000000000000000000000000000000000000000000000000000000000005555"/>
+                    android:text="帮忙带份菊园三楼大碗饭，素菜：青菜，千叶豆腐，荤菜：鱼香肉丝，加鸡蛋"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -363,7 +364,7 @@
                 android:layout_height="55dp"
                 android:scaleType="centerInside"
                 android:id="@+id/zxI1"
-                android:background="@drawable/check_box_selected"/>
+                android:background="@drawable/study1"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -374,7 +375,7 @@
                     android:layout_marginLeft="73dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="66666666"/>
+                    android:text="概率论与数理统计"/>
                 <TextView
                     android:layout_marginTop="3dp"
                     android:layout_marginLeft="11dp"
@@ -383,7 +384,7 @@
                     android:id="@+id/ad_abstract1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="55555555555500000000000000000000000000000000000000000000000000000000005555"/>
+                    android:text="20:00:00	22:00:00 北核1103"/>
             </LinearLayout>
 
 
@@ -400,7 +401,7 @@
                 android:layout_height="55dp"
                 android:scaleType="centerInside"
                 android:id="@+id/zxI2"
-                android:background="@drawable/check_box_selected"/>
+                android:background="@drawable/study2"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -411,7 +412,7 @@
                     android:layout_marginLeft="73dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="66666666"/>
+                    android:text="高等数学"/>
                 <TextView
                     android:layout_marginTop="3dp"
                     android:layout_marginLeft="11dp"
@@ -420,7 +421,7 @@
                     android:ellipsize="end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="55555555555500000000000000000000000000000000000000000000000000000000005555"/>
+                    android:text="20:00:00	21:30:00南核2206"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -436,7 +437,7 @@
                 android:layout_height="55dp"
                 android:scaleType="centerInside"
                 android:id="@+id/zxI3"
-                android:background="@drawable/check_box_selected"/>
+                android:background="@drawable/study3"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -447,7 +448,7 @@
                     android:layout_marginLeft="73dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="66666666"/>
+                    android:text="程序设计基础"/>
                 <TextView
                     android:layout_marginTop="3dp"
                     android:layout_marginLeft="11dp"
@@ -456,7 +457,7 @@
                     android:ellipsize="end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="55555555555500000000000000000000000000000000000000000000000000000000000000000000000000005555"/>
+                    android:text="20:10:00	21:30:00"/>
             </LinearLayout>
 
         </LinearLayout>

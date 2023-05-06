@@ -58,4 +58,7 @@ public class Shop implements Serializable {
         return shopDescription;
     }
 
+    public Double getShopPrice() {
+        return shopPrice;
+    }
 }
