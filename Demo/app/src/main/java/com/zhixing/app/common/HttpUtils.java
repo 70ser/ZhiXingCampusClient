@@ -15,7 +15,7 @@ import java.net.URL;
 
 public class HttpUtils {
     static volatile String ret;
-    final static String BASE_URL = "http://47.115.226.135:9090/";
+    final static String BASE_URL = "http://127.0.0.1:9090/";
     public static JsonObject doGet(String apiUrl){
 
         Thread thread = new Thread(new Runnable() {
