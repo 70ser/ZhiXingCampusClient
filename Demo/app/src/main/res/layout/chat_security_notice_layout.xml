@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/notice_content"
         android:gravity="center|left"
-        android:text="@string/chat_security_warning"
+        android:text="安全警告"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
