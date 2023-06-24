@@ -120,11 +120,7 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
 
         mConversationBtnText = findViewById(R.id.conversation);
         mContactBtnText = findViewById(R.id.contact);
-        mContactBtnI=findViewById(R.id.tab_community_icon);
-        mContactBtnT=findViewById(R.id.tab_community_tv);
         mProfileSelfBtnText = findViewById(R.id.mine);
-        mainContactBtnI=findViewById(R.id.tab_main_icon);
-        mainContactBtnT=findViewById(R.id.main);
         mConversationBtnIcon = findViewById(R.id.tab_conversation_icon);
         mContactBtnIcon = findViewById(R.id.tab_contact_icon);
         mProfileSelfBtnIcon = findViewById(R.id.tab_profile_icon);
@@ -132,7 +128,6 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
         mNewFriendUnread = findViewById(R.id.new_friend_total_unread);
 
         fragments = new ArrayList<>();
-        fragments.add(new main_main());
         fragments.add(new TUIConversationMinimalistFragment());
         fragments.add(new TUIContactMinimalistFragment());
         fragments.add(new ProfileMinimalistFragment());
@@ -152,7 +147,7 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
         mainViewPager.setUserInputEnabled(false);
         mainViewPager.setOffscreenPageLimit(11);
         mainViewPager.setAdapter(fragmentAdapter);
-        mainViewPager.setCurrentItem(1, false);
+        mainViewPager.setCurrentItem(0, false);
         prepareToClearAllUnreadMessage();
     }
 
@@ -330,29 +325,19 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
                 mContactBtnI.setBackground(getResources().getDrawable(R.drawable.demo_main_tab_community_selected_light));
                 break;
             case R.id.conversation_btn_group:
-                mainViewPager.setCurrentItem(1, false);
+                mainViewPager.setCurrentItem(0, false);
                 mConversationBtnText.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
                 mConversationBtnIcon.setBackground(getResources().getDrawable(R.drawable.demo_overseas_main_tab_conversation_selected));
                 break;
             case R.id.contact_btn_group:
-                mainViewPager.setCurrentItem(2, false);
+                mainViewPager.setCurrentItem(1, false);
                 mContactBtnText.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
                 mContactBtnIcon.setBackground(getResources().getDrawable(R.drawable.demo_overseas_main_tab_contact_selected_bg));
                 break;
             case R.id.myself_btn_group:
-                mainViewPager.setCurrentItem(3, false);
+                mainViewPager.setCurrentItem(2, false);
                 mProfileSelfBtnText.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
                 mProfileSelfBtnIcon.setBackground(getResources().getDrawable(R.drawable.demo_overseas_main_tab_settings_selected_bg));
-                break;
-            case R.id.news_btn_group:
-                mainViewPager.setCurrentItem(4, false);
-                mContactBtnT.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
-                mContactBtnI.setBackground(getResources().getDrawable(R.drawable.demo_main_tab_community_selected_light));
-                break;
-            case R.id.contact_main_group:
-                mainViewPager.setCurrentItem(0, false);
-                mainContactBtnT.setTextColor(getResources().getColor(R.color.demo_main_tab_text_selected_color_light));
-                mainContactBtnI.setBackground(getResources().getDrawable(R.drawable.main_login_language_icon_light));
                 break;
             default:
                 break;
@@ -366,10 +351,6 @@ public class MainMinimalistActivity extends BaseMinimalistLightActivity {
         mContactBtnIcon.setBackground(getResources().getDrawable(R.drawable.demo_overseas_main_tab_contact_normal_bg));
         mProfileSelfBtnText.setTextColor(getResources().getColor(com.tencent.qcloud.tuicore.R.color.core_light_bg_secondary_text_color_light));
         mProfileSelfBtnIcon.setBackground(getResources().getDrawable(R.drawable.demo_overseas_main_tab_settings_normal_bg));
-        mContactBtnT.setTextColor(getResources().getColor(com.tencent.qcloud.tuicore.R.color.core_light_bg_secondary_text_color_light));
-        mContactBtnI.setBackground(getResources().getDrawable(R.drawable.demo_community_not_selected));
-        mainContactBtnT.setTextColor(getResources().getColor(com.tencent.qcloud.tuicore.R.color.core_light_bg_secondary_text_color_light));
-        mainContactBtnI.setBackground(getResources().getDrawable(R.drawable.demo_login_language_icon_light));
 
     }
 

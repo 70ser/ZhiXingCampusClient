@@ -29,48 +29,6 @@
             android:background="@color/transparent"
             android:orientation="horizontal">
             <RelativeLayout
-                android:id="@+id/contact_main_group"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:onClick="tabClick">
-
-                <ImageView
-                    android:id="@+id/tab_main_icon"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/demo_login_language_icon_light" />
-
-                <TextView
-                    android:id="@+id/main"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tab_main_icon"
-                    android:layout_centerInParent="true"
-                    android:gravity="center"
-                    android:text="主页"
-                    android:textColor="@color/core_light_bg_secondary_text_color_light"
-                    android:textSize="12sp" />
-
-                <com.tencent.qcloud.tuicore.component.UnreadCountTextView
-                    android:id="@+id/new_main_total_unread"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="-8dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_toEndOf="@id/main"
-                    android:gravity="center"
-                    android:includeFontPadding="false"
-                    android:minWidth="18.4dp"
-                    android:minHeight="18.4dp"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13.6sp"
-                    android:visibility="gone" />
-            </RelativeLayout>
-            <RelativeLayout
                 android:id="@+id/conversation_btn_group"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -155,33 +113,6 @@
                     android:textColor="#FFFFFF"
                     android:textSize="13.6sp"
                     android:visibility="gone" />
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/news_btn_group"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:onClick="tabClick">
-
-                <ImageView
-                    android:id="@+id/tab_community_icon"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="8dp"
-                    android:background="?attr/demo_main_tab_community_normal_bg" />
-
-                <TextView
-                    android:id="@+id/tab_community_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tab_community_icon"
-                    android:layout_centerInParent="true"
-                    android:gravity="center"
-                    android:text="功能页"
-                    android:textColor="?attr/demo_main_tab_normal_text_color"
-                    android:textSize="12sp" />
-
             </RelativeLayout>
             <RelativeLayout
                 android:id="@+id/myself_btn_group"
